@@ -13,6 +13,29 @@ As a matter of a fact $\chi_1$ is irrational, so it won't be represented exactel
 The n-th value of the relation will thus be: $\chi_n=\phi_1^n+\epsilon\phi_2^n$ <br>
 The problem lies in the fact that $|\phi_2|>1$ and $|\phi_1|<1$, thus when the two addends in $\chi_n$ will be in the same order of magnitude its value will start to noticeably deviate from the expected value of $\phi_1^n$.
 ## EXERCISES 3-4-5-6-7: deterministic integration with Simpson rule, Trapezoidal rule, Romberg method and gaussian quadratures.
+The formulas, analyzed in this exercises are the following<br>
+### Trapezoidal and Simson rule
+$\int_{x_1}^{x_N} f(x)dx = h[\frac{1}{2}f(x_1)+f(x_2)+...+f(x_{N-1})+\frac{1}{2}f(x_N)] + \mathcal{O}(\frac{1}{N^2})$<br>
+-Simpson rule: $\int_{x_1}^{x_N} f(x)dx = \frac{h}{3}[f(x_1)+4f(x_2)+2f(x_3)+...+2f(x_{N-2})+4f(x_{N-1})+f(x_N)] + \mathcal{O}(\frac{1}{N^4})$<br>
+where $h$ represents the width of each interval into which the original integration interval is divided<br>
+### Romberg method
+$R(J,K)=\frac{4^KR(J,K-1)-R(J-1,K-1)}{4^K-1}$<br>
+where $J$ is a parameter linked to the number of points used for the integration and $K$ is a parameter linked to the precision of the method. Increasing the former corresponds to an increase in the number of points, while the latter increases the order in $h$ with which the formula differs from the analytical result.
+### Gaussian quadratures
+$I=\int_a^bf(x)W(x)dx\simeq\displaystyle\sum_{i=1}^nf(x_i)w_i$<br>
+where $W(x)$ is the weight function of a particular set of orthogonal polynomials which needs to appear explicitly in the integral for the formula to work.
+In the exercises different sets of polynomials are used:
+#### Legendre Polynomials
+Weight $W(x)=1$, Integration range: $(-1,1)$.<br>
+The only challenge is to shift the original interval to $(-1,1)$ but this can be easily done with the transformation: <br>
+$x \mapsto \frac{b-a}{2}x+\frac{b+a}{2}$<br>
+#### Laguerre Polynomials
+Weight $W(x)=e^{-x}$, Integration range: $(0,\infty)$.<br>
+Here one may transform the integral through:<br>
+$I=\int_a^bf(x)dx=\int_a^{\infty}f(x)dx-\int_b^{\infty}f(x)dx=\int_0^{\infty}[f(x+a)-f(x+b)]e^xe^{-x}dx$<br>
+But the first step may not be well-posed as the integrals may diverge and the method may not be stable numerically. This is the case of the function $f(x)=cosh(x)$ for which one has to resort to its definition as sum of real exponentials to transform the integral in a form which is acceptable for the use of these polynomials.
+#### Laguerre Polynomials
+Weight $W(x)=e^{-x^2}$, Integration range: $(-\infty,\infty)$.<br>
 ## EXERCISE 8: calculation of the volume of an M-sphere with the midpoint rule in M dimensions and with Monte Carlo integration.
 ## EXERCISE 9: analysis with central limit theorem with a discrete distribution and with a uniform distribution.
 ## EXERCISE 10: Monte Carlo integration and importance sampling.
