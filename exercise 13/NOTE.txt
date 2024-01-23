@@ -1,0 +1,8 @@
+DA FARE
+-importance sampling con media per il calcolo di ogni integrale (fare con al massimo 1000 punti e mediando tante volte, confrontando con montecarlo "vero" e importance samoling nello stesso scatter plot
+, ci si aspetta che uno dei due non migliori con l'importance perche' la scelta della funzione influenza molto il fatto che l'importance migliori o meno ruispetto al motne carlo standard)
+-eventuale confronto con altri metodi
+-eventuiale fit IN SCALA LOGARITMICA per verificare andamento
+
+NOTE SU COSE FATTE
+-la seconda funzione era da normalizzare in quanto sin(x) ha area 2

@@ -1,0 +1,11 @@
+#include<iostream>
+#include<vector>
+#include"stat.h"
+typedef long double ld;
+
+using namespace std;
+
+int main(int argc, char** argv){
+
+  return 0;
+}

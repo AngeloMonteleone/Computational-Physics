@@ -1,0 +1,7 @@
+OSSERVAZIONI
+-già con time step piccoli i valori dell'angolo e della velocità paiono eccedere leggermente l'unità, cosa che analiticamente non succcede
+-provando con timestep molto grandi si ottengono risultati divergenti (./esercizio14.exe .1 3000). Inoltre pare dipenda sia dal timestep
+ che dal numero di step, infatti per ./esercizio14.exe .1 3000 si arriva a circa 2e6 in valore assoluto, mentre per 
+ ./esercizio14.exe .01 30000 allo stesso istante (circa 300) si arriva a 4
+-per fare uno studio qualitativo dei tre metodi bisogna vedere che l'errore vada come h^2,h^3,h^5... Dovrebbe dipendere anche
+ dalla larghezza del time step

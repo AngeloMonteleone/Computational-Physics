@@ -1,0 +1,26 @@
+#include<iostream>
+#include<vector>
+#include<fstream>
+
+using namespace std;
+
+int main(int argc, char** argv){
+    string path = "testeulero.dat";
+    // cout << path << endl;
+    ifstream file(path,ios::in);
+    
+    int i=0;
+    int time;
+    ld diff,dump;
+    while(true){
+        file >> time;
+        file >> diff;
+	file >> dump;
+	if(time == 1)
+	  cout << "diff: " << diff << endl;
+        if(file.eof())  break;
+        i++;
+    }
+    file.close();
+  return 0;
+}
