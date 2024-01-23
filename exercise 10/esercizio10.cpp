@@ -74,23 +74,23 @@ int main(int argc, char** argv){
   ld val5 = REAL_VAL5;
   // vector<ld> data3hm, data4hm, data5hm;
   vector<ld> data3mc,data4mc,data5mc;
-  vector<int> ascisse;
-  for(int n= step;n<=N;n+=step){
+  vector<ld> ascisse;
+  for(int n= step;n<=N;n*=step){
     cout << n << endl;
-    ascisse.push_back(n);
+    ascisse.push_back(1./n);
     // data3hm.push_back(fabsl(hit_miss_repeat(n,0,5,0,f3(5),&f3,50)-val3));
     // data4hm.push_back(fabsl(hit_miss_repeat(n,3,8,0,f4(8),&f4,50)-val4));
     // data5hm.push_back(fabsl(hit_miss_repeat(n,-1,8,0,80,&f5,50)-val5));
 
-    data3mc.push_back(fabsl(integral_Monte_Carlo_repeat<ld>(n,0,5,&f3,200)-val3));
-    data4mc.push_back(fabsl(integral_Monte_Carlo_repeat<ld>(n,3,8,&f4,200)-val4));
-    data5mc.push_back(fabsl(integral_Monte_Carlo_repeat<ld>(n,-1,8,&f5,200)-val5));
+    data3mc.push_back(fabsl(integral_Monte_Carlo_repeat<ld>(n,0,5,&f3,20)-val3));
+    data4mc.push_back(fabsl(integral_Monte_Carlo_repeat<ld>(n,3,8,&f4,20)-val4));
+    data5mc.push_back(fabsl(integral_Monte_Carlo_repeat<ld>(n,-1,8,&f5,20)-val5));
   }
 
   // printInFile<int,ld>("int3hm.dat",ascisse,data3hm,15);
   // printInFile<int,ld>("int4hm.dat",ascisse,data4hm,15);
   // printInFile<int,ld>("int5hm.dat",ascisse,data5hm,15);
-  printInFile<int,ld>("int3mc.dat",ascisse,data3mc,15);
-  printInFile<int,ld>("int4mc.dat",ascisse,data4mc,15);
-  printInFile<int,ld>("int5mc.dat",ascisse,data5mc,15);
+  printInFile<ld,ld>("int3mc.dat",ascisse,data3mc,15);
+  printInFile<ld,ld>("int4mc.dat",ascisse,data4mc,15);
+  printInFile<ld,ld>("int5mc.dat",ascisse,data5mc,15);
 }

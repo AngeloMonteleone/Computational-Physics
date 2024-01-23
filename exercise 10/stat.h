@@ -73,13 +73,13 @@ T integral_Monte_Carlo_repeat(int N, ld a, ld b, ld (*func)(ld),int repeat){
     T point;
     T tot = 0;
     for(int j=0;j<repeat;j++){
+        ret=0.;
         for(int i=0;i<N;i++){
             point = uniform(a,b);
             ret+=func(point);
         }
-        tot+=ret*(b-a)/N;
-        ret=0;
+        tot+=ret*(b-a)/static_cast<ld>(N);
     }
     
-    return tot/repeat;
+    return tot/static_cast<ld>(repeat);
 }
