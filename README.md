@@ -1,6 +1,7 @@
 # Computational-Physics
-Repository for the projects of the 2023-24 course of Computational Physics. <br> 
-<b>DISCLAIMER</b>: Here a brief description of each exercise follows, along with <b>some</b> of the problems and anlyses which were done during the course. The code is mostly filled with English names for the variables and functions, however sometimes the comments and debug lines are written in Italian, as it was the main language of the course.
+Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 23/01/2024</b>)<br> 
+A general directory with some graphs and other visual results will soon be added to the page. <br><br>
+<b>DISCLAIMER</b>: Here a brief description of each exercise follows, along with <b>some</b> of the problems and anlyses which were done during the course. The code is mostly filled with English names for the variables and functions, however sometimes the comments and debug lines are written in Italian, as it was the main language of the course. This repository serves as a general presentation of the content of the course.
 ## EXERCISE 1: analysis of roundoff and truncation errors in floating-point numbers
 This first exercise focuses on the calculation of the sum $\displaystyle\sum_{n=1} ^{N} \frac{1}{n^2}$. To calcute this sum one can follow two different approaches:
 1. Starting to calculate the term with $n=1$ by initializing a variable to $1$ and then adding all the others till $\frac{1}{N}$
@@ -62,4 +63,18 @@ In general, it is expected that the computing time of the midpoint method will i
 
 On the other hand the Monte Carlo method is highly more efficient in higher dimensions, but it needs to increase the number of points used to keep up with the precision, which would otherwise decrease if the number of points was fixed.
 ## EXERCISE 9: analysis with central limit theorem with a discrete distribution and with a uniform distribution.
-## EXERCISE 10: Monte Carlo integration and importance sampling.
+The focus of this exercise is the generation of random numbers. More precisely it is aimed at studying the behaviour of random variables constructed as: <br><br>
+$x_i=\frac{1}{N}\displaystyle \sum_{n=1}^{N}r_n$
+<br><br>
+Where the $r_n$'s are random numbers generated with the same distribution. One distribution is the discrete distribution, which gives the same probability of extracting $-1$ or $+1$:<br><br>
+$f_{\text{coin}}(x) = \frac{1}{2}\delta(x-1) + \frac{1}{2}\delta(x+1)$
+<br><br>
+While the other is the uniform distribution in the interval $(-1,+1)$:<br><br>
+$f_{\text{unif}}(x)=\frac{1}{2}$
+<br><br>
+It is expected that the random variables constructed starting from these distributions will exhibit a behaviour that resembles the one of a Gaussian distribution, as predicted by the central limit theorem.
+## EXERCISE 10: Monte Carlo integration and hit or miss method.
+## EXERCISE 11: Random number generation: inverse transfom sampling
+## EXERCISE 12: Gaussian distributed random numbers: inverse transfom sampling VS rejection sampling 
+## EXERCISE 13: Stochastic integration: Monte Carlo sampling VS importance sampling
+## EXERCISES 14-15-16-17-18: differential equations: Euler VS Runge-Kutta methods
