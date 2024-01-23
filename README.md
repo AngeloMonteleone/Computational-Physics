@@ -62,7 +62,7 @@ where $\langle f\rangle$ denotes the mean value of the function f.
 In general, it is expected that the computing time of the midpoint method will increase exponentially as the number $M$ of dimensions grows. This is due to the fact that if we choose to use 10 points per dimension to contruct the grid, this will result in having to evaluate the function in $10^M$ different points. Moreover additional computing time is required to cycle through all the possible permutations of the coordinates to use the whole grid.<br>
 
 On the other hand the Monte Carlo method is highly more efficient in higher dimensions, but it needs to increase the number of points used to keep up with the precision, which would otherwise decrease if the number of points was fixed.
-## EXERCISE 9: analysis with central limit theorem with a discrete distribution and with a uniform distribution.
+## EXERCISE 9: analysis of the central limit theorem with a discrete distribution and with a uniform distribution.
 The focus of this exercise is the generation of random numbers. More precisely it is aimed at studying the behaviour of random variables constructed as: <br><br>
 $x_i=\frac{1}{N}\displaystyle \sum_{n=1}^{N}r_n$
 <br><br>
