@@ -1,5 +1,5 @@
 # Computational-Physics
-Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 23/01/2024</b>)<br> 
+Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 25/01/2024</b>)<br> 
 A general directory with some graphs and other visual results will soon be added to the page. <br><br>
 <b>DISCLAIMER</b>: Here a brief description of each exercise follows, along with <b>some</b> of the problems and anlyses which were done during the course. The code is mostly filled with English names for the variables and functions, however sometimes the comments and debug lines are written in Italian, as it was the main language of the course. This repository serves as a general presentation of the content of the course.
 ## EXERCISE 1: analysis of roundoff and truncation errors in floating-point numbers
@@ -74,7 +74,20 @@ $f_{\text{unif}}(x)=\frac{1}{2}$
 <br><br>
 It is expected that the random variables constructed starting from these distributions will exhibit a behaviour that resembles the one of a Gaussian distribution, as predicted by the central limit theorem.
 ## EXERCISE 10: Monte Carlo integration and hit or miss method.
+The hit or miss method consists in the approximation of the integral through the random generation of points $(x_i,y_i)$ in the rectangle $[a,b]\times[0,y_{\text{max}}]$ that encolses the graph of the function in the interval $[a,b]$, where $y_{\text{max}}$ is the maximum value of the function in that domain. The following formula describes the approximation<br><br>
+$I\simeq I_{\text{HM}} = y_{\text{max}}(b-a)\frac{N_{\textit{hit}}}{N_{\textit{tot}}}$
+<br><br>
+Here the term $\frac{N_{\textit{hit}}}{N_{\textit{tot}}}$ represents the fraction of points for which the following condition is satisfied $y_i$ $<$ $f(x_i)$.<br>
+On the other hand the Monte Carlo method is implemented as described in <b>exercise 8</b>, just for the one dimensional case.
 ## EXERCISE 11: Random number generation: inverse transfom sampling
+The implementation of the inverse transform method is rather simple, as we want to use some function to generate a distribution of random numbers. Here we study the following functions:<br><br>
+1. $f(x)=e^{-x}, x\in(0,2)$
+2. $g(x)=e^{-x}, x\in(1,\infty)$
+3. $h(x)=xe^{-x^2}, x\in(0,\infty)$
+<br><br>
+
+For each of these we will need to calculate their <b>cumulative distribution function (CDF)</b> y=F(x) and by inverting this function (which needs to be normalized) and using random numbers $y_i$ generated in $(0,1)$ we can extract the respective $x_i$ values.<br>
+The only problem of this method arises when the analytical form of a CDF is not known. In those cases we have to resort to other methods, as described in <b>exercise 12</b>
 ## EXERCISE 12: Gaussian distributed random numbers: inverse transfom sampling VS rejection sampling 
 ## EXERCISE 13: Stochastic integration: Monte Carlo sampling VS importance sampling
 ## EXERCISES 14-15-16-17-18: differential equations: Euler VS Runge-Kutta methods
