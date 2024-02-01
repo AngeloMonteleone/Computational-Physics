@@ -1,5 +1,5 @@
 # Computational-Physics
-Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 25/01/2024</b>)<br> 
+Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 1/02/2024</b>)<br> 
 A general directory with some graphs and other visual results will soon be added to the page. <br><br>
 <b>DISCLAIMER</b>: Here a brief description of each exercise follows, along with <b>some</b> of the problems and anlyses which were done during the course. The code is mostly filled with English names for the variables and functions, however sometimes the comments and debug lines are written in Italian, as it was the main language of the course. This repository serves as a general presentation of the content of the course.
 ## EXERCISE 1: analysis of roundoff and truncation errors in floating-point numbers
@@ -88,6 +88,18 @@ The implementation of the inverse transform method is rather simple, as we want 
 
 For each of these we will need to calculate their <b>cumulative distribution function (CDF)</b> y=F(x) and by inverting this function (which needs to be normalized) and using random numbers $y_i$ generated in $(0,1)$ we can extract the respective $x_i$ values.<br>
 The only problem of this method arises when the analytical form of a CDF is not known. In those cases we have to resort to other methods, as described in <b>exercise 12</b>
-## EXERCISE 12: Gaussian distributed random numbers: inverse transfom sampling VS rejection sampling 
+## EXERCISE 12: Gaussian distributed random numbers: exact method VS rejection sampling
+Gaussian numbers can be generated "exactly" by the following method:
+1. Generate a random number $z\in(0,1)$, and $\alpha\in(0,1)$
+2. Calculate $r=\sqrt{-ln(1-z)}$
+3. Calculate $x=r cos(2\pi\alpha)$. $x$ will then have a gaussian distribution with mean equal to zero and a width of $\frac{1}{2}$.
+
+Another way of generating gaussian distributed numbers is through **rejection sampling**. <br>
+If we wish our numbers to follow $f(x)=\frac{1}{\sqrt{\pi}}e^{-x^2}$:
+1. We need a test distribution $g(x)$ such that $g(x)\geq f(x)$, $\forall x$.
+2. Then we need to sample this distribution at a point $\tilde{x}$ in its domain and thereafter we sample a number $\tilde{y}$ with a uniform distribution in $(0,g(\tilde{x}))$.
+3. If $\tilde{y}\geq f(\tilde{x})$, then the sampled value $\tilde{x}$ is rejected, otherwise it is accepted.
+
+The main challenge in this method is to find a proper test distribution, which in theory should be as similar as possible as the desired one, in order to reduce the number of rejections.
 ## EXERCISE 13: Stochastic integration: Monte Carlo sampling VS importance sampling
 ## EXERCISES 14-15-16-17-18: differential equations: Euler VS Runge-Kutta methods
