@@ -118,12 +118,12 @@ $I=\int_a^b f(x)dx=\int_a^b \frac{f(x)}{g(x)}g(x) dx = \int_{G(a)}^{G(b)} \frac{
 $\simeq \frac{1}{N} \sum \frac{f(G^{-1}(z_i))}{g(G^{-1}(z_i))}$
 <br><br>
 
-Where $z=G(x)=\int_a^xg(t)dt$. The problem is thus diverted to the integration of a new functions. A comparison of the two methods was carried out. Here below the results:
+Where $z=G(x)=\int_a^xg(t)dt$. The problem is thus diverted to the integration of a new functions. A comparison of the two methods was carried out. Here below the results, where $N$ is the number of points used and $err(I)$ the difference with the analytical result:
 <p align="center">
    <img src="/exercise 13/images/comp1.png" width="30%" height="30%"> <img src="/exercise 13/images/comp2.png" width="30%" height="30%">
 </p>
 
-Surprisingly, one of the functions behaves badly after the change of variable. We conclude that importance sampling does not always represent an improvement in terms of precision.
+Surprisingly, for one of the functions the error increases after the change of variable. We conclude that importance sampling does not always represent an improvement in terms of precision.
 ## EXERCISES 14-15-16-17-18: differential equations: Euler and Runge-Kutta methods
 To approach differential equations numerically we use three different methods:
 1. Euler method
@@ -133,4 +133,20 @@ To approach differential equations numerically we use three different methods:
 Each of these introduces an error in the solution, so that the numerical result differs from the the "real" result (if it exists). The main difference is the order of magnitude the error introduced, which is, respectively of order 1, 3 and 5, with respect to the chosen timestep to integrate the equation. Here we will present some applications of these methods.
 
 ### Harmonic oscillator
-Equation: $\frac{d^2\theta}{dt^2}=-sin(\theta)$
+**Simple oscillator**, equation: $\frac{d^2\theta}{dt^2}=-sin(\theta)$
+<p align="center">
+   <img src="/exercise 15/grafici/semplice_angolo.png" width="30%" height="30%"> <img src="/exercise 15/grafici/semplice_vel.png" width="30%" height="30%"> <img src="/exercise 15/grafici/semplice_fasi.png" width="30%" height="30%">
+</p>
+<br><br>
+
+**Damped oscillator**, equation: $\frac{d^2\theta}{dt^2}=-sin(\theta)-\gamma\frac{d\theta}{dt}$
+<p align="center">
+   <img src="/exercise 15/grafici/smorzato_angolo.png" width="30%" height="30%"> <img src="/exercise 15/grafici/smorzato_vel.png" width="30%" height="30%"> <img src="/exercise 15/grafici/smorzato_fasi.png" width="30%" height="30%">
+</p>
+<br><br>
+
+**Driven oscillator**, equation: $\frac{d^2\theta}{dt^2}=-sin(\theta)-\gamma\frac{d\theta}{dt}+ Asin(\frac{2}{3}t)$
+<p align="center">
+   <img src="/exercise 15/grafici/forzato_angolo.png" width="30%" height="30%"> <img src="/exercise 15/grafici/forzato_vel.png" width="30%" height="30%"> <img src="/exercise 15/grafici/forzato_fasi.png" width="30%" height="30%">
+</p>
+<br><br>
