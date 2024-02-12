@@ -1,5 +1,5 @@
 # Computational-Physics
-Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 1/02/2024</b>)<br> 
+Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 12/02/2024</b>)<br> 
 A general directory with some graphs and other visual results will soon be added to the page. <br><br>
 <b>DISCLAIMER</b>: Here a brief description of each exercise follows, along with <b>some</b> of the problems and anlyses which were done during the course. The code is mostly filled with English names for the variables and functions, however sometimes the comments and debug lines are written in Italian, as it was the main language of the course. This repository serves as a general presentation of the content of the course.
 ## EXERCISE 1: analysis of roundoff and truncation errors in floating-point numbers
@@ -102,4 +102,12 @@ If we wish our numbers to follow $f(x)=\frac{1}{\sqrt{\pi}}e^{-x^2}$:
 
 The main challenge in this method is to find a proper test distribution, which in theory should be as similar as possible as the desired one, in order to reduce the number of rejections.
 ## EXERCISE 13: Stochastic integration: Monte Carlo sampling VS importance sampling
+One of themain flaws of standard Monte Carlo integration is that the points used to integrate something have an uniform distribution on the x axis. As a result, there are regions of the integration domain where the function is almost zero (and thus should have a little contribute to the result), but the computational effort is the same everywhere. Here we analyze two cases:
+1. $I_1=\int_0^{\frac{\pi}{2}}xcos(x)dx$
+2. $I_2=\int_0^{\pi}xsin(x)dx $
+
+<br>
+Here is a graph of these two functions
+<img src="/exercise 13/images/plotINIT.png" width="30%" height="30%">
+
 ## EXERCISES 14-15-16-17-18: differential equations: Euler VS Runge-Kutta methods
