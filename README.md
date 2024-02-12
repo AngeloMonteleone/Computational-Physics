@@ -114,8 +114,7 @@ Here is a graph of these two functions
 <br><br>
 By means of a change of variable importance sampling tries to even out a function height by dividing it with a similar function. The general integral thus becomes:<br><br>
 
-$I=\int_a^b f(x)dx=\int_a^b \frac{f(x)}{g(x)}g(x) dx = \int_{G(a)}^{G(b)} \frac{f(x=G^{-1}(z))}{g(x=G^{-1}(z))} dz$ <br>
-$\simeq \frac{1}{N} \sum \frac{f(G^{-1}(z_i))}{g(G^{-1}(z_i))}$
+$$I=\int_a^b f(x)dx=\int_a^b \frac{f(x)}{g(x)}g(x) dx = \int_{G(a)}^{G(b)} \frac{f(x=G^{-1}(z))}{g(x=G^{-1}(z))} dz\simeq \frac{1}{N} \sum \frac{f(G^{-1}(z_i))}{g(G^{-1}(z_i))}$$
 <br><br>
 
 Where $z=G(x)=\int_a^xg(t)dt$. The problem is thus diverted to the integration of a new functions. A comparison of the two methods was carried out. Here below the results, where $N$ is the number of points used and $err(I)$ the difference with the analytical result:
@@ -150,3 +149,27 @@ Each of these introduces an error in the solution, so that the numerical result 
    <img src="/exercise 15/grafici/forzato_angolo.png" width="30%" height="30%"> <img src="/exercise 15/grafici/forzato_vel.png" width="30%" height="30%"> <img src="/exercise 15/grafici/forzato_fasi.png" width="30%" height="30%">
 </p>
 <br><br>
+
+### Chaotic systems: Lorenz attractor
+Equations:
+* $\frac{dx}{dt}=-10(x-y)$
+* $\frac{dy}{dt}=-xz+28x-y$
+* $\frac{dz}{dt}=xy-\frac{8}{3}z$
+
+<p align="center">
+   <img src="/exercise 17/grafici/plot3d_points.png" width="30%" height="30%">
+<br><br>
+
+### Three body problem
+Equations:
+$$m_i\frac{d^2\vec{r_i}}{dt}=-\sum_{i\neq j}m_im_j\frac{\vec{r_i}-\vec{r_j}}{\vert\vec{r_i}-\vec{r_j}\vert^3}$$
+Initial data:
+* $m_1 = m_2 = m_3 = 0.3$
+* $\vec{r_1} = (1,0,0)$; $\vec{v_1} = (0,0.15,-0.15)$
+* $\vec{r_2} = (-1,0,0)$; $\vec{v_2} = (0,-0.15,0.15)$
+* $\vec{r_3} = (0,0,0)$; $\vec{v_3} = (0,0,0)$
+
+Plots (Euler, RK2 and RK4)
+<p align="center">
+   <img src="/exercise 18/grafici/set1_eulero.png" width="30%" height="30%"> <img src="/exercise 18/grafici/set1_rk2.png" width="30%" height="30%"> <img src="/exercise 18/grafici/set1_rk4.png" width="30%" height="30%">
+</p>
