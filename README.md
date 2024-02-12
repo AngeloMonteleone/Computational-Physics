@@ -117,7 +117,7 @@ By means of a change of variable importance sampling tries to even out a functio
 $$I=\int_a^b f(x)dx=\int_a^b \frac{f(x)}{g(x)}g(x) dx = \int_{G(a)}^{G(b)} \frac{f(x=G^{-1}(z))}{g(x=G^{-1}(z))} dz\simeq \frac{1}{N} \sum \frac{f(G^{-1}(z_i))}{g(G^{-1}(z_i))}$$
 <br><br>
 
-Where $z=G(x)=\int_a^xg(t)dt$. The problem is thus diverted to the integration of a new functions. A comparison of the two methods was carried out. Here below the results, where $N$ is the number of points used and $err(I)$ the difference with the analytical result:
+Where $z=G(x)=\int_a^xg(t)dt$. The problem is thus diverted to the integration of a new function. A comparison of the two methods was carried out. Here below the results, where $N$ is the number of points used and $err(I)$ the difference with the analytical result:
 <p align="center">
    <img src="/exercise 13/images/comp1.png" width="30%" height="30%"> <img src="/exercise 13/images/comp2.png" width="30%" height="30%">
 </p>
