@@ -108,6 +108,20 @@ One of themain flaws of standard Monte Carlo integration is that the points used
 
 <br>
 Here is a graph of these two functions
-<img src="/exercise 13/images/plotINIT.png" width="30%" height="30%">
+<p align="center">
+   <img src="/exercise 13/images/plotINIT.png" width="30%" height="30%">
+</p>
+<br><br>
+By means of a change of variable importance sampling tries to even out a function height by dividing it with a similar function. The general integral thus becomes:<br><br>
 
+$I=\int_a^b f(x)dx=\int_a^b \frac{f(x)}{g(x)}g(x) dx = \int_{G(a)}^{G(b)} \frac{f(x=G^{-1}(z))}{g(x=G^{-1}(z))} dz$ <br>
+$\simeq \frac{1}{N} \sum \frac{f(G^{-1}(z_i))}{g(G^{-1}(z_i))}$
+<br><br>
+
+Where $z=G(x)=\int_a^xg(t)dt$. The problem is thus diverted to the integration of a new functions. A comparison of the two methods was carried out. Here below the results:
+<p align="center">
+   <img src="/exercise 13/images/comp1.png" width="30%" height="30%"> <img src="/exercise 13/images/comp2.png" width="30%" height="30%">
+</p>
+
+Surprisingly, one of the functions behaves badly after the change of variable. We conclude that importance sampling does not always represent an improvement in terms of precision.
 ## EXERCISES 14-15-16-17-18: differential equations: Euler VS Runge-Kutta methods
