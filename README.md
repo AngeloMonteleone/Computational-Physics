@@ -124,4 +124,13 @@ Where $z=G(x)=\int_a^xg(t)dt$. The problem is thus diverted to the integration o
 </p>
 
 Surprisingly, one of the functions behaves badly after the change of variable. We conclude that importance sampling does not always represent an improvement in terms of precision.
-## EXERCISES 14-15-16-17-18: differential equations: Euler VS Runge-Kutta methods
+## EXERCISES 14-15-16-17-18: differential equations: Euler and Runge-Kutta methods
+To approach differential equations numerically we use three different methods:
+1. Euler method
+2. Runge-Kutta order 2
+3. Runge-Kutta order 4
+<br>
+Each of these introduces an error in the solution, so that the numerical result differs from the the "real" result (if it exists). The main difference is the order of magnitude the error introduced, which is, respectively of order 1, 3 and 5, with respect to the chosen timestep to integrate the equation. Here we will present some applications of these methods.
+
+### Harmonic oscillator
+Equation: $\frac{d^2\theta}{dt^2}=-sin(\theta)$
