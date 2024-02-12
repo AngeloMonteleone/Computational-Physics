@@ -161,6 +161,7 @@ Equations:
 * $\frac{dx}{dt}=-10(x-y)$
 * $\frac{dy}{dt}=-xz+28x-y$
 * $\frac{dz}{dt}=xy-\frac{8}{3}z$
+ 
 <br>Initial data: $(1,1,1)$
 <br>Plots (xy, xz, yz planes)
 <p align="center">
