@@ -1,5 +1,5 @@
 # Computational-Physics
-Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 12/02/2024</b>)<br> 
+Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 02/03/2024</b>)<br> 
 Exercises **from 13 to 20** are the ones with the most interesting visual results (displayed in this page).<br><br>
 <b>DISCLAIMER</b>: Here a brief description of each exercise follows, along with <b>some</b> of the problems and anlyses which were done during the course. The code is mostly filled with English names for the variables and functions, however sometimes the comments and debug lines are written in Italian, as it was the main language of the course. This repository serves as a general presentation of the content of the course.
 ## EXERCISE 1: analysis of roundoff and truncation errors in floating-point numbers
@@ -180,4 +180,22 @@ Initial data:
 Plots (Euler, RK2 and RK4)
 <p align="center">
    <img src="/exercise 18/grafici/set1_eulero.png" width="30%" height="30%"> <img src="/exercise 18/grafici/set1_rk2.png" width="30%" height="30%"> <img src="/exercise 18/grafici/set1_rk4.png" width="30%" height="30%">
+</p>
+
+## EXERCISES 19-20: rootfinding algorithms, bisection and Newton-Rapson
+The bisection algorithm is based on the fact that a function, if continuous in an interval $[a,b]$, where $f(a)f(b)<0$ (that is, if it has opposite signs at the border of its domain), must have a root in that interval. As such, we proceed in the following way:
+1. Start from the interval $[a,b]$, suppose that $f(a)<0$ and $f(b)>0$
+2. Calculate $x=\frac{a+b}{2}$
+3. if $f(x)<0$ we repeat the process with interval $[x,b]$, otherwise with $[a,x]$
+4. Stop when a given accuracy level is reached, that is, when $|b-a|<\varepsilon$
+
+The Newton-Rapson method is based of the fact that, if we start in a point $x$ in neighborhood of the root, with a little displacement $\delta$ we should approach the root and thus $f(x+\delta)\simeq 0$. With a Taylor expansion we find the needed displacement:
+$$\delta=-\frac{f(x)}{f'(x)}$$
+And by iterating the process we should rapidely get close to the root. If our initial guess was far from it than the expression for $\delta$ has little to no significance and leads to divergence.
+
+This last method has been applied to the case of $z^3-1=0$, which has three roots in the complex plane. The algorithm reduces to the iterative relation:
+$$z_{j+1}=z_j-\frac{z_j^3-1}{3z_j^2}$$
+Starting off an equally spaced grid in the region $[-2,2]\times[-2,2]$ in the complex plane and by applying this method, if we assign to each point an integer which corresponds to the number of iterations needed to converge below a certain accuracy we get the following image, known as a "Newton fractal"
+<p align="center">
+   <img src="/exercise 20/fractal50.png" width="50%" height="50%">
 </p>
