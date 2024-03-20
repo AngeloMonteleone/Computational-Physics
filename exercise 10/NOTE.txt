@@ -1,0 +1,8 @@
+NOTE
+
+fare la media dei risultati per ridurre le oscillazioni ha senso solamente se si media il valore assoluto degli scarti, perché è questo che deve andare come 1/sqrt(N), mentre mediando sul singolo integrale non si agisce sulla distribuzione del modulo degli scarti, che in questo caso è quella di interesse se si vuole analizzare l'andamento dell'errore. Così infatti esce un esponente di 0.5 circa anche con solo 1000 o 10000 punti se mediati 100 volte.
+
+Inoltre il mediare agisce proprio sul minimizzare la deviazione della discrepanza (e le sue oscillazioni), per cui in questo caso si riducono le oscillazioni di un fattore di sqrt(100)=10.
+Passare a medie più alte non conviene perché per avere una diminuizione di un altro fattore 10 bisognerebbe mediare 10000 volte.
+
+NB: questa radice che diminuisce la discrepanza e il 1/sqrt(N) dell'andamento verificato tramite fit NON SONO LA STESSA COSA: il primo è una considerazione sul TCL, il secondo sulle attese del metodo montecarlo o hit or miss
