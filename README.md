@@ -1,5 +1,5 @@
 # Computational-Physics
-Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 02/03/2024</b>)<br> 
+Repository for the projects of the 2023-24 course of Computational Physics. (<b>LAST UPDATE: 21/03/2024</b>)<br> 
 Exercises **from 13 to 20** are the ones with the most interesting visual results (displayed in this page).<br><br>
 <b>DISCLAIMER</b>: Here a brief description of each exercise follows, along with <b>some</b> of the problems and anlyses which were done during the course. The code is mostly filled with English names for the variables and functions, however sometimes the comments and debug lines are written in Italian, as it was the main language of the course. This repository serves as a general presentation of the content of the course.
 ## EXERCISE 1: analysis of roundoff and truncation errors in floating-point numbers
